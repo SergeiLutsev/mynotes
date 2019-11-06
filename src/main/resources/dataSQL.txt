@@ -1,0 +1,4 @@
+insert into site_keeper (name, description, url, note,user_name,password)
+values ('test company','just for test','www.example.com', 'worksite','sergei','1234560');
+insert into site_keeper (name, description, url, note,user_name,password)
+values ('IBM','Best computer company','www.IBM.com', 'Please take me to you team','serIBM','321');

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Site keeper view</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th th:text="'Site information'"></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>ID:</th>
+                    <td th:text="${siteKeper.id}"></td>
+                </tr>
+                <tr>
+                    <th>Name:</th>
+                    <td th:text="${siteKeper.name}"></td>
+                </tr>
+                <tr>
+                    <th>Description:</th>
+                    <td th:text="${siteKeper.description}"></td>
+                </tr>
+                <tr>
+                    <th>URL:</th>
+                    <td>
+                        <a th:href="@{${siteKeper.url}}" th:text="${siteKeper.url}" target="_blank"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>User:</th>
+                    <td th:text="${siteKeper.login.userName}"></td>
+                </tr>
+                <tr>
+                    <th>Password:</th>
+                    <td th:text="${siteKeper.login.password}"></td>
+                </tr>
+                <tr>
+                    <th>Note:</th>
+                    <td th:text="${siteKeper.note}"></td>
+                </tr>
+                </tbody>
+            </table>
+            <p><a class="btn btn-primary" href="#" role="button" th:href="@{'/index'}" th:text="'Back to home'"></a></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

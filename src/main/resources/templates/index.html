@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Site keeper</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h2 th:text="#{home.welcome}"></h2>
+            <p>
+                <a class="btn btn-primary" href="#" role="button" th:href="@{'/sitekeeper/create'}" th:text="'Create new'"></a>
+                <a class="btn btn-primary" href="#" role="button" th:href="@{'/sitekeeper/savetofile'}" th:text="'Save to file'"></a>
+            </p>
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>View</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="site : ${sites}">
+                    <td th:text="${site.id}"></td>
+                    <td th:text="${site.name}"></td>
+                    <td th:text="${site.description}"></td>
+                    <td><a th:href="@{'/sitekeeper/'+${site.id}+'/show'}" th:text="View"></a></td>
+                    <td><a th:href="@{'/sitekeeper/'+${site.id}+'/update'}" th:text="Update"></a></td>
+                    <td><a th:href="@{'/sitekeeper/'+${site.id}+'/delete'}" th:text="Delete"></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
