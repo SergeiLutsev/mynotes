@@ -63,7 +63,7 @@ public class SiteKeeperController {
         siteKeeperService.deleteById(Long.valueOf(siteId));
         return "redirect:/index";
     }
-
+    //some thing for sefti serching
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder){
         dataBinder.setDisallowedFields("id");
